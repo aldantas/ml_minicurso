@@ -1,4 +1,3 @@
-
 import numpy as np
 np.set_printoptions(precision=3, suppress=True)
 
@@ -17,8 +16,8 @@ y_pred = classifier.predict(X_test)
 score = classifier.score(X_test, y_test)
 print(score)
 
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
-scaler = StandardScaler()
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
 X_scaled_data = scaler.fit_transform(X_data)
 print(X_data[0:5,:])
 print(X_scaled_data[0:5,:])
