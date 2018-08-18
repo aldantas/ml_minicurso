@@ -5,10 +5,20 @@ filename = 'dataset/flag.csv'
 data = pd.read_csv(filename, names=column_names)
 pd.set_option('display.max_columns', 30)
 print(data[0:5])
+input()
+
+print(data.shape)
+X = data.iloc[:,:-1]
+Y = data.iloc[:,-1]
+print(X.shape)
+print(Y.shape)
+print(Y)
+input()
 
 labels = data['religion'].values
 del data['religion']
 del data['name']
+
 
 # Converter valores nominais para inteiros
 from sklearn.preprocessing import LabelEncoder
@@ -26,7 +36,8 @@ oneh = OneHotEncoder(categorical_features=idxs, sparse=False)
 onehot_data = oneh.fit_transform(encoded_data)
 print(data.shape)
 print(onehot_data.shape)
-print(onehot_data[0])
+# print(onehot_data[0])
+input()
 run_clf(onehot_data, labels, 'OneHotEncoder:')
 
 # Reduzir dimensionalidade

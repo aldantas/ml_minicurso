@@ -1,31 +1,17 @@
-import numpy as np
-np.set_printoptions(precision=3, suppress=True)
-
 from sklearn.datasets import load_wine
-X_data, y_data = load_wine(return_X_y=True)
+dataset = load_wine()
+print(dataset.DESCR)
 
+X, Y = dataset.data, dataset.target
+
+from clf_runner import clf_runner
 from sklearn.svm import SVC
 classifier = SVC()
+clf_runner(X, Y, classifier)
 
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X_data, y_data,
-                                                    test_size=.3, shuffle=True,
-                                                    random_state=42)
-classifier.fit(X_train, y_train)
-y_pred = classifier.predict(X_test)
-score = classifier.score(X_test, y_test)
-print(score)
-
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 scaler = MinMaxScaler()
-X_scaled_data = scaler.fit_transform(X_data)
-print(X_data[0:5,:])
-print(X_scaled_data[0:5,:])
-
-X_train, X_test, y_train, y_test = train_test_split(X_scaled_data, y_data,
-                                                    test_size=.3, shuffle=True,
-                                                    random_state=42)
-classifier.fit(X_train, y_train)
-y_pred = classifier.predict(X_test)
-score = classifier.score(X_test, y_test)
-print(score)
+X_scaled = scaler.fit_transform(X)
+# print(X[0:5,:])
+# print(X_scaled[0:5,:])
+clf_runner(X_scaled, Y, classifier)

@@ -1,8 +1,9 @@
-from sklearn.datasets import load_iris
+from sklearn.datasets import load_iris, load_digits
+# dataset = load_digits()
 dataset = load_iris()
 
-print(dataset.feature_names)
-print(dataset.data[0:5])
+print(dataset.DESCR)
+print(dataset.data[:5])
 print(dataset.target)
 
 X = dataset.data
@@ -21,6 +22,3 @@ print(clf.predict(X_test))
 print(Y_test)
 
 print(clf.score(X_test, Y_test))
-
-from save_tree import save_tree
-save_tree(clf, dataset)

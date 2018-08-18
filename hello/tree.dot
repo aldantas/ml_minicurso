@@ -1,7 +1,7 @@
 digraph Tree {
 node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
 edge [fontname=helvetica] ;
-0 [label=<petal width (cm) &le; 0.8<br/>gini = 0.664<br/>samples = 105<br/>value = [31, 37, 37]<br/>class = versicolor>, fillcolor="#39e58100"] ;
+0 [label=<petal length (cm) &le; 2.45<br/>gini = 0.664<br/>samples = 105<br/>value = [31, 37, 37]<br/>class = versicolor>, fillcolor="#39e58100"] ;
 1 [label=<gini = 0.0<br/>samples = 31<br/>value = [31, 0, 0]<br/>class = setosa>, fillcolor="#e58139ff"] ;
 0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
 2 [label=<petal width (cm) &le; 1.75<br/>gini = 0.5<br/>samples = 74<br/>value = [0, 37, 37]<br/>class = versicolor>, fillcolor="#39e58100"] ;
@@ -26,11 +26,11 @@ edge [fontname=helvetica] ;
 9 -> 11 ;
 12 [label=<petal length (cm) &le; 4.85<br/>gini = 0.059<br/>samples = 33<br/>value = [0, 1, 32]<br/>class = virginica>, fillcolor="#8139e5f7"] ;
 2 -> 12 ;
-13 [label=<sepal length (cm) &le; 5.95<br/>gini = 0.444<br/>samples = 3<br/>value = [0, 1, 2]<br/>class = virginica>, fillcolor="#8139e57f"] ;
+13 [label=<sepal width (cm) &le; 3.1<br/>gini = 0.444<br/>samples = 3<br/>value = [0, 1, 2]<br/>class = virginica>, fillcolor="#8139e57f"] ;
 12 -> 13 ;
-14 [label=<gini = 0.0<br/>samples = 1<br/>value = [0, 1, 0]<br/>class = versicolor>, fillcolor="#39e581ff"] ;
+14 [label=<gini = 0.0<br/>samples = 2<br/>value = [0, 0, 2]<br/>class = virginica>, fillcolor="#8139e5ff"] ;
 13 -> 14 ;
-15 [label=<gini = 0.0<br/>samples = 2<br/>value = [0, 0, 2]<br/>class = virginica>, fillcolor="#8139e5ff"] ;
+15 [label=<gini = 0.0<br/>samples = 1<br/>value = [0, 1, 0]<br/>class = versicolor>, fillcolor="#39e581ff"] ;
 13 -> 15 ;
 16 [label=<gini = 0.0<br/>samples = 30<br/>value = [0, 0, 30]<br/>class = virginica>, fillcolor="#8139e5ff"] ;
 12 -> 16 ;
